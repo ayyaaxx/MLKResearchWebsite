@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Style Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FAFBFC;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+          /* Navbar Styles */
+          nav {
+            background-color: var(--header-footer-bg);
+            padding: 5px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        nav a {
+            color: var(--header-footer-text);
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--button-hover-bg);
+            color: var(--header-footer-text);
+            border-radius: 5px;
+        }
+
+        nav a.active {
+            background-color: var(--button-bg);
+            border-radius: 5px;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #4A90E2;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .question input[type="radio"],
+        .question input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #6CA0DC;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4A90E2;
+        }
+
+        .result {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #E8F4F8;
+            border-left: 4px solid #6CA0DC;
+            border-radius: 8px;
+        }
+
+        .result h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #5B9BD5;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning Style Quiz</h1>
+                <!-- Navbar -->
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="quiz.html">Quiz</a>
+                </nav>
+    </header>
+
+    <main>
+        <form id="quizForm">
+            <h2>Discover Your Learning Style</h2>
+
+            <div class="question">
+                <label>1. How do you prefer to learn new information?</label>
+                <input type="radio" name="question1" value="visual" required> Watching videos or looking at diagrams<br>
+                <input type="radio" name="question1" value="auditory"> Listening to explanations or discussions<br>
+                <input type="radio" name="question1" value="kinesthetic"> Hands-on experience or physical activities<br>
+            </div>
+
+            <div class="question">
+                <label>2. What kind of activities do you enjoy the most?</label>
+                <input type="radio" name="question2" value="visual" required> Reading or visualizing concepts<br>
+                <input type="radio" name="question2" value="auditory"> Listening to podcasts or engaging in conversations<br>
+                <input type="radio" name="question2" value="kinesthetic"> Building, crafting, or experimenting<br>
+            </div>
+
+            <div class="question">
+                <label>3. Which tool do you use the most when studying?</label>
+                <input type="radio" name="question3" value="visual" required> Highlighters or color-coded notes<br>
+                <input type="radio" name="question3" value="auditory"> Audiobooks or recorded lectures<br>
+                <input type="radio" name="question3" value="kinesthetic"> Models, prototypes, or practice kits<br>
+            </div>
+
+            <!-- STEM-Oriented Questions -->
+            <div class="question">
+                <label>4. What type of STEM resources do you prefer?</label>
+                <input type="radio" name="question4" value="visual" required> Interactive simulations or tutorials<br>
+                <input type="radio" name="question4" value="auditory"> Recorded lectures or webinars<br>
+                <input type="radio" name="question4" value="kinesthetic"> Lab experiments or coding challenges<br>
+            </div>
+
+            <div class="question">
+                <label>5. How do you approach problem-solving in STEM?</label>
+                <input type="radio" name="question5" value="visual" required> Drawing diagrams or mind maps<br>
+                <input type="radio" name="question5" value="auditory"> Discussing problems with peers<br>
+                <input type="radio" name="question5" value="kinesthetic"> Trial and error with hands-on practice<br>
+            </div>
+
+            <div class="question">
+                <label>6. Which type of STEM content engages you the most?</label>
+                <input type="radio" name="question6" value="visual" required> Graphs, charts, or infographics<br>
+                <input type="radio" name="question6" value="auditory"> Podcasts, interviews, or audio content<br>
+                <input type="radio" name="question6" value="kinesthetic"> Building projects, kits, or models<br>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="result" id="quizResult">
+            <h3>Your Recommended Learning Style:</h3>
+            <p id="resultText"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 STEM Learning Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let visualCount = 0;
+            let auditoryCount = 0;
+            let kinestheticCount = 0;
+
+            const formData = new FormData(event.target);
+
+            for (const entry of formData.entries()) {
+                if (entry[1] === 'visual') visualCount++;
+                if (entry[1] === 'auditory') auditoryCount++;
+                if (entry[1] === 'kinesthetic') kinestheticCount++;
+            }
+
+            let resultText = '';
+
+            if (visualCount > auditoryCount && visualCount > kinestheticCount) {
+                resultText = `
+                    You have a Visual learning style. You might benefit most from:
+                    - Interactive simulations or tutorials
+                    - Graphs, charts, and infographics
+                    - Drawing diagrams and mind maps
+                `;
+            } else if (auditoryCount > visualCount && auditoryCount > kinestheticCount) {
+                resultText = `
+                    You have an Auditory learning style. You might benefit most from:
+                    - Recorded lectures or webinars
+                    - Podcasts, interviews, or discussions
+                    - Collaborative problem-solving with peers
+                `;
+            } else if (kinestheticCount > visualCount && kinestheticCount > auditoryCount) {
+                resultText = `
+                    You have a Kinesthetic learning style. You might benefit most from:
+                    - Hands-on lab experiments or coding challenges
+                    - Building projects, kits, or models
+                    - Trial-and-error problem-solving approaches
+                `;
+            } else {
+                resultText = `
+                    You have a balanced learning style. You can benefit from a mix of:
+                    - Visual resources like diagrams and simulations
+                    - Auditory resources like podcasts and discussions
+                    - Kinesthetic activities like hands-on projects and experiments
+                `;
+            }
+
+            document.getElementById('resultText').innerHTML = resultText;
+            document.getElementById('quizResult').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* Color Variables */
+:root {
+    --primary-color: #6CA0DC; /* Soft Blue */
+    --secondary-color: #82E0AA; /* Soft Green */
+    --accent-color: #F5B041; /* Soft Coral */
+    --header-footer-bg: #5B9BD5; /* Header/Footer Background */
+    --header-footer-text: #ffffff; /* Header/Footer Text */
+    --background-color: #FAFBFC; /* Very Light Grayish Blue */
+    --section-header-color: #4A90E2; /* Section Header Color */
+    --text-color: #333333; /* Dark Gray */
+    --link-color: var(--primary-color);
+    --link-hover-color: var(--secondary-color);
+    --button-bg: var(--primary-color);
+    --button-hover-bg: #4A90E2;
+    --list-item-bg: #ffffff;
+    --list-item-hover-bg: #F5F9FF; /* Very Light Blue */
+    --border-color-odd: var(--secondary-color);
+    --border-color-even: var(--accent-color);
+}
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FAFBFC;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Header Styles */
+header {
+    background-color: var(--header-footer-bg);
+    color: var(--header-footer-text);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+/* Section Styles */
+.resource-section {
+    margin-bottom: 40px;
+}
+
+.resource-section h2 {
+    color: var(--section-header-color);
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* List Styles */
+.resource-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.resource-section li {
+    background-color: var(--list-item-bg);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-left: 4px solid transparent; /* Default border */
+}
+
+.resource-section li:hover {
+    background-color: var(--list-item-hover-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-section li a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.resource-section li a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Alternate Border Colors for List Items */
+.resource-section ul li:nth-child(odd) {
+    border-left: 4px solid var(--border-color-odd);
+}
+
+.resource-section ul li:nth-child(even) {
+    border-left: 4px solid var(--border-color-even);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--header-footer-bg);
+    color: var(--header-footer-text);
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Button Styles */
+button {
+    background-color: var(--button-bg);
+    color: var(--header-footer-text);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Additional Styling for Links and Sections */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .resource-section h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .resource-section li {
+        padding: 12px;
+    }
+}
+/* Smooth Hover Transitions */
+.resource-section li {
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.resource-section li:hover {
+    background-color: var(--list-item-hover-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Navbar Styles */
+nav {
+    background-color: var(--header-footer-bg);
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in;
+}
+
+nav a {
+    color: var(--header-footer-text);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--header-footer-text);
+    border-radius: 5px;
+}
+
+nav a.active {
+    background-color: var(--button-bg);
+    border-radius: 5px;
+}
